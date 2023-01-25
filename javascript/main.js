@@ -18,7 +18,7 @@ while (menu !== "salir") {
             precioTotal = precioTotal + 1400
             break;
         case "Golden deluxe":
-            precioTotal = 1500
+            precioTotal = precioTotal + 1500
             break;
     }
 }
