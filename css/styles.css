@@ -1,19 +1,43 @@
-body {
+* {
     margin: 0;
     padding: 0;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    background-image: url('/imgs/background.jpeg');
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.5;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
+    background-image: url(/imgs/background.jpeg);
     background-size: cover;
+    background-repeat: no-repeat;
+    overflow-y: scroll;
+    overflow-y: auto;
+}
+a {
+    text-decoration: none;
+}
+.btn-cart {
 
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-.fontcolor{
-    color: orange;
-    text-shadow: black 2px 2px 5px ;
-    text-decoration: solid;
-    
+.btn-cart:hover {
+    width: 10em;
+    background-color: #3e8e41;
 }
-
 .navbar {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     border: solid 1px red;
@@ -36,4 +60,95 @@ body {
     
 }       
 
+.p-intro {
+    color: orange;
+    text-shadow: black 2px 2px 5px ;
+    text-decoration: solid;
+}
+.fontcolor{
+    color: orange;
+    text-shadow: black 2px 2px 5px ;
+    text-decoration: solid;
+    
+}
 
+
+/* MENU MENU MENU MENU MENU MENU MENU MENU MENU */
+
+.container {
+    border: 5px solid red;
+    width: 1100px;
+    max-width: 100%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.card {
+    border: 1px solid red;
+    flex-wrap: wrap;
+    flex: 1 1 20rem;
+    margin: 10px 20px;
+    align-self: center;
+    background-color: orange;
+    box-shadow: 0 0 15px rgb(0, 0, 0);
+}
+
+.btn-cart {
+    background-color: rgb(61, 59, 59);
+    color: white;
+}
+.col {
+    display: flex!important;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.img-thumbnail{
+    max-width: 50px !important;
+    max-height: 50px !important;
+}
+
+.card-img-top {
+    max-height: 318px;
+    max-width: 318px;
+
+}
+
+.container-cart {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+    width: 30%;
+    border-radius: 5px;
+    background-color: #eee;
+    margin-left: 20px;
+    padding: 15px;
+    text-align: center;
+
+}
+
+
+.head {
+    
+    background-color:orange;
+    border-radius: 3px;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+}

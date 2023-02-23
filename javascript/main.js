@@ -8,13 +8,12 @@ function Burger (name, description, price, stock) {
 
 const burgers = [];
 
-burgers.push(new Burger('Doble Cheese', 'x2 patty, x4 cheddar, BBQ sauce', 1000.0,true));
-burgers.push(new Burger('Single Bacon', 'x1 patty, x2 bacon, x2 cheddar, BBQ sauce', 1000.0,true));
-burgers.push(new Burger('Triple Cheese', 'x3 patty, x6 cheddar, BBQ sauce', 1200.0,true));
-burgers.push(new Burger('Doble Bacon', 'x2 patty, x4 bacon, x4 cheddar, BBQ sauce', 1200.0,true));
-burgers.push(new Burger('Doble Tasty', 'x2 patty, x4 cheddar, lechuga, pickles, salsa tasty', 1400.0,true));
+burgers.push(new Burger('Doble Cheeseburger', 'x2 patty, x4 cheddar, BBQ sauce', 1200.0,true));
+burgers.push(new Burger('Triple Cheeseburger', 'x3 patty, x6 cheddar, BBQ sauce', 1400.0,true));
+burgers.push(new Burger('American Cheeseburger', 'x2 patty, x4 cheddar, x2 tomate, 1 lechuga', 1400.0,true));
+burgers.push(new Burger('American Chicken', 'x2 chicken breast, x4 cheddar, x2 tomate, x1 lechuga', 1300.0,true));
 burgers.push(new Burger('Triple Bacon', 'x3 patty, x6 cheddar, x6 bacon, BBQ sauce', 1400.0,true));
-burgers.push(new Burger('GOLDEN Deluxe', 'x3 patty, x6 cheddar, x2 bacon, pickles, huevo frito, GOLDEN sauce, BBQ sauce', 1600.0, true))
+burgers.push(new Burger('GOLDEN Deluxe', 'x3 patty, x3 cheddar, x2 crispy onion, x1 ketchup, GOLDEN sauce', 1500.0, true))
 
 function wrongRequest() {
     alert("Error, datos ingresados incorrectos")
@@ -43,7 +42,7 @@ while(request !== 'salir') {
     if (request !== 'salir') {
         let burger = requestBurger(request);
         if (burger !== null) {
-            order.push(burger);
+                order.push(burger);
         } else {
             wrongRequest();
         }

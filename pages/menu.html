@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/styles.css">
-    <title>GOLDEN BURGER MENU</title>
+    <title>Menu @ GOLDEN BURGER MENU</title>
 </head>
 <body>
     <header>
@@ -18,23 +18,25 @@
         </div>
     </header>
 <main>
-    <div class="container">
-        <div class="containerbox">
-            <p class="fontcolor"> Nuestras Opciones </p>
-            <ul>
-                <li><p class="fontcolor">Single Cheese x $1000</p></li>
-                <p class="fontcolor"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt quas reprehenderit alias voluptatum cumque reiciendis adipisci, natus aperiam nemo nobis quidem tempora ea, mollitia doloremque nulla voluptatem eaque vitae impedit? </p>
-                <li><p class="fontcolor">Golden Bacon x $1600</p></li>
-                <p class="fontcolor"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt quas reprehenderit alias voluptatum cumque reiciendis adipisci, natus aperiam nemo nobis quidem tempora ea, mollitia doloremque nulla voluptatem eaque vitae impedit? </p>
-                <li><p class="fontcolor">Golden Deluxe x $1800</p></li>
-                <p class="fontcolor"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt quas reprehenderit alias voluptatum cumque reiciendis adipisci, natus aperiam nemo nobis quidem tempora ea, mollitia doloremque nulla voluptatem eaque vitae impedit? </p>
-                <li><p class="fontcolor">>Golden King x $2000</p></li>
-                <p class="fontcolor"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt quas reprehenderit alias voluptatum cumque reiciendis adipisci, natus aperiam nemo nobis quidem tempora ea, mollitia doloremque nulla voluptatem eaque vitae impedit? </p>
-            </ul>
+
+<!--cards & images-->
+    <div class="container" id="burgershop">
+        <div class="row" id="product-container"></div>
+        <div class="container-cart">
+            <div class="sidebar">
+                <div class="head"><p>Mi Carrito</p></div>
+                    <div id="cartItem">El carrito esta vacio</div>
+                    <div class="cart-quantity cart-column"></div>
+                    <div class="foot">
+                        <h3>Total</h3>
+                        <h2 id="total-price">$ 0.00</h2>
+                    </div>
+            </div>
         </div>
     </div>
+
+
 </main>    
-<script src="../javascript/main.js">
-</script>
+    <script src="../javascript/cart.js"></script>
 </body>
 </html>
