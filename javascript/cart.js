@@ -1,9 +1,13 @@
-// ``
+// vars
 shoppingCart = [];
 
 const productContainer = document.getElementById("product-container");
-const cartContainer = document.getElementById("cartItem");
+const cartContainer = document.getElementById("cartItems");
 const totalPrice = document.getElementById("total-price")
+
+
+// Funciones
+
 
 function totalSum(burger) {
     let total = burger.reduce(function (acc, burger) { return acc + burger.price; }, 0);
@@ -15,64 +19,68 @@ function saveStorage(total) {
     sessionStorage.setItem("total", JSON.stringify(total));
 }
 
+function getProductsJSON() {
+    return fetch('products.json')
+            .then(products => {
+                products.json();})
+        .then((data) => {return data;})
+}
+
+// remove 
 function removeBurger(id) {
-    shoppingCart = shoppingCart.filter((burger)=> {
+    shoppingCart = shoppingCart.filter((burger) => {
         return burger.id !== id;
     })
     const renderedCartProducts = shoppingCart.map((product) => {
         const { id, image, description, title, price } = product;
-        return `<div><img class="card-img-top img-thumbnail" src="/${image}">  ${title}  $${price}</div>
-        <button class="btn btn-remove-cart" type="button" onclick="removeBurger('${id}')">Remover</button>`
+        return `<div class="cart-items">
+        <div class="item">
+            <div class="item-name">${title}</div>
+        <div class="item-price">$${price}</div>
+            <button class="remove-item" id="${id}">Remove</button>
+    </div>
+    $${totalPrice}`
     })
     cartContainer.innerHTML = renderedCartProducts.join('');
     totalPrice.innerHTML = `$ ${totalSum(shoppingCart)}`;
 };
 
+function triggerSweetAlert(title, message, alertType) {
+    Swal.fire({
+        title: "Burger Agregada!",
+        text: "El item se agrego al carrito",
+        icon: "success",
+        confirmButtonText: 'OK',
+        buttons: {
+            confirm: {
+                text: "Ver Carrito",
+                value: true,
+                visible: true,
+                className: "btn btn-primary",
+                closeModal: true
+            },
+            cancel: {
+                text: "Seguir Comprando",
+                value: false,
+                visible: true,
+                className: "btn btn-secondary",
+                closeModal: true,
+            }
+        }
+    }).then((value) => {
+        if (value) {
+            // redirigirse
+            window.location.href = "#";
+        } else {
+            // quedarse
+        }
+    });
+}
 
-const products = [
-    {
-        id: "burger1",
-        image: 'imgs/burger1.png',
-        description: 'Doble Patty y Cuatro fetas de cheddar',
-        title: 'Double Cheeseburger',
-        price: 1200.0
-    },
-    {
-        id: "burger2",
-        image: 'imgs/burger2.png',
-        description: 'Triple Patty y seis fetas de cheddar',
-        title: 'Triple Cheeseburger',
-        price: 1400.0
-    },
-    {
-        id: "burger3",
-        image: 'imgs/burger3.png',
-        description: 'Doble Patty, Cuatro fetas de cheddar, rodajas de tomate y Lechuga',
-        title: 'American Cheeseburger',
-        price: 1300.0
-    },
-    {
-        id: "burger4",
-        image: 'imgs/burger4.png',
-        description: 'Doble Medallon de pollo, Cuadruple cheddar, rodajas de tomate y Lechuga',
-        title: 'American Chicken',
-        price: 1300.0
-    },
-    {
-        id: "burger5",
-        image: 'imgs/burger5.png',
-        description: 'Triple patty, Triple cheddar, 6 tiras de bacon americano y Mayonesa',
-        title: 'Triple Bacon',
-        price: 1400.0
-    },
-    {
-        id: "burger6",
-        image: 'imgs/burger6.png',
-        description: 'Triple patty, Triple cheddar, Cebolla crispy, ketchup y salsa GOLDEN',
-        title: 'GOLDEN Deluxe',
-        price: 1500.0
-    },
-]
+debugger;
+const products = []
+
+// map
 
 const renderedProducts = products.map((product) => {
     const { id, image, description, title, price } = product;
@@ -91,25 +99,34 @@ const renderedProducts = products.map((product) => {
     </div>`
 })
 
+
 productContainer.innerHTML = renderedProducts.join('')
 
 let buttonAddToCart = document.querySelectorAll(".btn-cart");
-
+// add al carrito
 buttonAddToCart.forEach(button => {
     button.addEventListener("click", () => {
         const product = products.find((product) => {
             return (product.id === button.id)
         })
         shoppingCart.push(product);
-        console.log(shoppingCart);
         const renderedCartProducts = shoppingCart.map((product) => {
             const { id, image, description, title, price } = product;
-            return `<div><img class="card-img-top img-thumbnail" src="/${image}">  ${title}  $${price}</div>
-            <button class="btn btn-remove-cart" type="button" onclick="removeBurger('${id}')">Remover</button>`
+            return `<div class="cart-items">
+                <div class="item">
+                    <div class="item-name">${title}</div>
+                <div class="item-price">$${price}</div>
+                    <button class="remove-item" id="${id}">Remove</button>
+            </div>
+            <div id="total-price">$${totalPrice}</div>`
         })
         cartContainer.innerHTML = renderedCartProducts.join('');
         totalPrice.innerHTML = `$ ${totalSum(shoppingCart)}`;
-    })
-});
+        triggerSweetAlert();
+    });
+})
 
+
+// <div><img class="card-img-top img-thumbnail" src="/${image}">  ${title}  $${price}</div>
+//   <button class="btn btn-remove-cart" type="button" onclick="removeBurger('${id}')">Remover</button>
 
