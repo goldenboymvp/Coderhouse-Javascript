@@ -10,43 +10,38 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="../css/styles.css" />
     <title>Menu @ GOLDEN BURGER MENU</title>
   </head>
   <body>
     <header>
-        <div class="navbar">
+      <div class="navbar">
         <li><a href="/index.html">Home</a></li>
         <li><a href="menu.html">Menu</a></li>
         <li><a href="/index.html">Hace tu pedido</a></li>
         <li><a href="/index.html">Nosotros</a></li>
-        </div>
+      </div>
     </header>
     <main>
-    <!--cards & images-->
-    <div class="container" id="burgershop">
+      <!--cards & images-->
+      <div class="container" id="burgershop">
         <div class="row" id="product-container"></div>
-                    <div class="head">
-                        <div class="shopping-cart" id="cartItems">
-                            <div class="cart-items">
-                              <div class="item">
+        <div class="head">
+          <div class="shopping-cart">
+            <div class="cart-items" id="cartItems">
+              <div class="item"></div>
+            </div>
+            <button class="checkout-button" id="btn-checkout">Checkout</button>
+            <div id="total-price"><p>Total $</p></div>
+          </div>
+        </div>
+      </div>
+    </main>
 
-                              </div>
-                            </div>
-                            ----
-                          <!-- precio total-->
-                          
-                            <button class="checkout-button">Checkout</button>
-                            <div id="total-price">$124</div>
-                          </div>
-                          
-                    </div>
-                    
-    </div>
-</main>
-
-    <script src="/javascript/cart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="../javascript/cart.js"></script>
     <script src="/javascript/sweetalert.js"></script>
-</body>
+  </body>
 </html>
